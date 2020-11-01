@@ -1,0 +1,13 @@
+[Unit]
+Description=HBMONITOR Host Service
+After=syslog.target network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/HBmonitor
+ExecStart=python3 /opt/HBmonitor/monitor.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
